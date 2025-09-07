@@ -48,7 +48,7 @@ export default function Home(){
         muted
         playsInline
       >
-        <source src="/src/assets/videos/bg-video.mp4" type="video/mp4" />
+        <source src="/videos/bg-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -105,7 +105,7 @@ export default function Home(){
               muted
               playsInline
             >
-              <source src="/src/assets/videos/hns.mp4" type="video/mp4" />
+              <source src="/videos/hns.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -118,7 +118,7 @@ export default function Home(){
 <section className="relative py-20 bg-black text-white overflow-hidden">
   {/* Background Image */}
   <img
-    src="/src/assets/tools/tools-bg.jpg"
+    src="/tools/tools-bg.jpg"
     alt="Tools Background"
     className="absolute top-0 left-0 w-full h-full object-contain z-0"
   />
@@ -138,7 +138,7 @@ export default function Home(){
   {/* Photoshop Toolbar on Left Corner */}
   <div className="absolute top-1/2 -left-20 transform -translate-y-1/2 z-20">
     <img
-      src="/src/assets/tools/toolbar.png"
+      src="/tools/toolbar.png"
       alt="Photoshop Toolbar"
       className="w-20 h-auto opacity-80 hover:opacity-100 transition"
     />
@@ -151,14 +151,14 @@ export default function Home(){
         <div className="flex justify-center gap-6">
           <div className="relative transition-transform duration-300 ease-out cursor-pointer hover:scale-125 hover:z-20">
             <img
-              src="/src/assets/tools/3.png"
+              src="/tools/3.png"
               alt="Tool 1"
               className="w-28 h-28 object-contain opacity-80 hover:opacity-100 transition duration-300 ease-out"
             />
           </div>
           <div className="relative transition-transform duration-300 ease-out cursor-pointer hover:scale-125 hover:z-20">
             <img
-              src="/src/assets/tools/1.png"
+              src="/tools/1.png"
               alt="Tool 2"
               className="w-28 h-28 object-contain opacity-80 hover:opacity-100 transition duration-300 ease-out"
             />
@@ -169,14 +169,14 @@ export default function Home(){
         <div className="flex justify-center gap-6">
           <div className="relative transition-transform duration-300 ease-out cursor-pointer hover:scale-125 hover:z-20">
             <img
-              src="/src/assets/tools/2.png"
+              src="/tools/2.png"
               alt="Tool 3"
               className="w-28 h-28 object-contain opacity-80 hover:opacity-100 transition duration-300 ease-out"
             />
           </div>
           <div className="relative transition-transform duration-300 ease-out cursor-pointer hover:scale-125 hover:z-20">
             <img
-              src="/src/assets/tools/4.png"
+              src="/tools/4.png"
               alt="Tool 4"
               className="w-28 h-28 object-contain opacity-80 hover:opacity-100 transition duration-300 ease-out"
             />
@@ -187,7 +187,7 @@ export default function Home(){
       {/* Right - Stable Image */}
       <div className="flex justify-center">
         <img
-          src="/src/assets/tools/5.png"
+          src="/tools/5.png"
           alt="Main Tool"
           className="w-64 h-64 object-contain opacity-90"
         />
@@ -211,22 +211,22 @@ export default function Home(){
         {
           title: 'Tiranga',
           type: 'Independent Film / Poster',
-          image: '/src/assets/projects/tiranga.jpg',
+          image: '/projects/tiranga.jpg',
         },
         {
           title: 'Deggaralu-Dooralu',
           type: 'Shortfilm / Title-Poster design',
-          image: '/src/assets/projects/DD.jpg',
+          image: '/projects/DD.jpg',
         },
         {
           title: 'Hey Chikitha',
           type: ' Feature Film / Poster Campaign',
-          image: '/src/assets/projects/hc.jpg',
+          image: '/projects/hc.jpg',
         },
         {
           title: 'Kalavar Raja Kahani',
           type: 'Independent Film / Poster campaign',
-          image: '/src/assets/projects/krk.jpg',
+          image: '/projects/krk.jpg',
         },
       ].map((project, i) => (
         <div
@@ -260,28 +260,28 @@ export default function Home(){
         {
           name: 'Anirudh Rao',
           role: 'Founder/Designer',
-          photo: '/src/assets/team/Anirudh.jpg',
+          photo: '/team/Anirudh.jpg',
           linkedin: 'https://www.linkedin.com/in/anirudh-rao-427021270/',
           instagram: 'https://www.instagram.com/anirudh369.design/',
         },
         {
           name: 'Pavan Kumar',
           role: 'Co-Founder/Marketing Lead',
-          photo: '/src/assets/team/vpk.jpg',
+          photo: '/team/vpk.jpg',
           linkedin: 'https://www.linkedin.com/in/vadithiyapavan/',
           instagram: 'https://www.instagram.com/itlumeepavanjadhav/',
         },
         {
           name: 'Angara Balaji',
           role: 'Marketing Strategist/Advisor',
-          photo: '/src/assets/team/avk.jpeg',
+          photo: '/team/avk.jpeg',
           linkedin: 'https://www.linkedin.com/in/balaji-angara/',
           instagram: 'https://www.instagram.com/tony_stark_13b/',
         },
         {
           name: 'Ashwith',
           role: 'Web Developer',
-          photo: '/src/assets/team/rinku.jpg',
+          photo: '/team/rinku.jpg',
           linkedin: 'https://www.linkedin.com/in/ashwith-pabba-514a26254/',
           instagram: 'https://www.instagram.com/_iam._.jarvis_/',
         },
@@ -329,19 +329,19 @@ export default function Home(){
       {[
         {
           name: 'BasiReddy Rana - Director ',
-          photo: '/src/assets/testimonials/1.png',
+          photo: '/testimonials/1.png',
           instagram: 'https://www.instagram.com/basireddy_rana/',
           testimonial: 'Amazing Concept Designs,Story telling at its peak',
         },
         {
           name: 'Garudavega Anji - Producer/DOP',
-          photo: '/src/assets/testimonials/2.png',
+          photo: '/testimonials/2.png',
           instagram: 'https://www.instagram.com/anjidop_garudavega/',
           testimonial: 'Great design, delivered on time.',
         },
         {
           name: 'Rohit Surisetty - Youtuber',
-          photo: '/src/assets/testimonials/3.png',
+          photo: '/testimonials/3.png',
           instagram: 'https://www.instagram.com/rohit_surisetty/',
           testimonial: 'Very Professional and affordable!',
         },
