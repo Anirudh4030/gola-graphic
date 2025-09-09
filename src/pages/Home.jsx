@@ -39,13 +39,7 @@ export default function Home(){
     <main className="pt-20">
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center bg-black text-white overflow-hidden">
-        {/* Background Video */}
-        <video
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
-          autoPlay loop muted playsInline
-        >
-          <source src="/videos/bg-video.mp4" type="video/mp4" />
-        </video>
+       
         <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-0"></div>
 
         {/* Content */}
