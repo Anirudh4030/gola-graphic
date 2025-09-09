@@ -37,70 +37,49 @@ export default function Home(){
 
   return (
     <main className="pt-20">
-{/* Hero */}
-<section className="relative min-h-[calc(100vh-80px)] flex items-center bg-black text-white overflow-hidden py-12 md:py-20">
-  {/* Overlay */}
-  <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-0"></div>
-
-  {/* Content */}
-  <div className="relative max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center w-full z-10">
-    
-    {/* Left Side */}
-    <div className="text-center md:text-left">
-      <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold">Gola Graphic</h1>
-      <p className="mt-4 text-base sm:text-lg md:text-2xl text-white/90 animate-slideUp opacity-0">
-        We Make Creative Noise
-      </p>
-
-      {/* Buttons */}
-      <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-        <a
-          href="#projects"
-          className="px-5 py-3 bg-brandRed text-white rounded-md shadow hover:opacity-90 transition text-sm sm:text-base"
+      {/* Hero */}
+      <section className="relative min-h-[90vh] flex items-center bg-black text-white overflow-hidden">
+        {/* Background Video */}
+       <video
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          autoPlay loop muted playsInline
         >
-          View Projects
-        </a>
-        <a
-          href="/services"
-          className="px-5 py-3 border border-white/10 text-white rounded-md hover:text-brandRed transition text-sm sm:text-base"
-        >
-          Services
-        </a>
-        <a
-          href="https://www.instagram.com/golagraphic/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-5 py-3 border border-red-500 text-red-500 rounded-md hover:bg-red-700 hover:text-white transition text-sm sm:text-base"
-        >
-          Instagram
-        </a>
-      </div>
+          <source src="/videos/bg-video.mp4" type="video/mp4" />
+        </video> 
+        <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-0"></div>
 
-      {/* Stats */}
-      <div className="mt-10 grid grid-cols-3 gap-4 text-center md:text-left">
-        <Stat end={2} suffix="+ Years" label="Experience" />
-        <Stat end={50} suffix="+" label="Clients" />
-        <Stat end={500} suffix="+" label="Designs" />
-      </div>
-    </div>
+        {/* Content */}
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center w-full z-10">
+          {/* Left Side */}
+          <div className="text-center md:text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold">Gola Graphic</h1>
+            <p className="mt-4 text-base sm:text-lg md:text-2xl text-white/90 animate-slideUp opacity-0">
+              We Make Creative Noise
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
+              <a href="#projects" className="px-5 py-3 bg-brandRed text-white rounded-md shadow hover:opacity-90 transition text-sm sm:text-base">View Projects</a>
+              <a href="/services" className="px-5 py-3 border border-white/10 text-white rounded-md hover:text-brandRed transition text-sm sm:text-base">Services</a>
+              <a href="https://www.instagram.com/golagraphic/" target="_blank" rel="noopener noreferrer" className="px-5 py-3 border border-red-500 text-red-500 rounded-md hover:bg-red-700 hover:text-white transition text-sm sm:text-base">Instagram</a>
+            </div>
 
-    {/* Right Side */}
-    <div className="relative flex justify-center">
-      <div className="rounded-xl border-2 border-brandRed overflow-hidden shadow-lg hover:shadow-[0_0_25px_5px_rgba(255,0,0,0.6)] transition">
-        <video
-          className="w-full max-w-xs sm:max-w-sm md:max-w-md rounded-xl"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/videos/hns.mp4" type="video/mp4" />
-        </video>
-      </div>
-    </div>
-  </div>
-</section>
+            {/* Stats */}
+            <div className="mt-10 grid grid-cols-3 gap-4 text-center md:text-left">
+              <Stat end={2} suffix="+ Years" label="Experience" />
+              <Stat end={50} suffix="+" label="Clients" />
+              <Stat end={500} suffix="+" label="Designs" />
+            </div>
+          </div>
 
+          {/* Right Side */}
+          <div className="relative flex justify-center">
+            <div className="rounded-xl border-2 border-brandRed overflow-hidden shadow-lg hover:shadow-[0_0_25px_5px_rgba(255,0,0,0.6)] transition">
+              <video className="w-full max-w-xs sm:max-w-sm md:max-w-md rounded-xl" autoPlay loop muted playsInline>
+                <source src="/videos/hns.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Tools We Use */}
       <section className="relative py-16 sm:py-20 bg-black text-white overflow-hidden">
