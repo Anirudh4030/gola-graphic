@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main   # change to master if your repo uses master
+
+media_folder: "public/uploads"   # where images are stored in the repo
+public_folder: "/uploads"        # the public URL path to that folder
+
+collections:
+  - name: "gallery"
+    label: "Gallery"
+    folder: "src/data/gallery"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "description", label: "Description", widget: "text" }
+      - { name: "image", label: "Image", widget: "image" }

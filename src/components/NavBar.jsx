@@ -20,6 +20,8 @@ export default function NavBar() {
         <nav className="hidden sm:flex gap-4 items-center">
           <NavLink to="/" className={({ isActive }) => linkClass(isActive)}>Home</NavLink>
           <NavLink to="/projects" className={({ isActive }) => linkClass(isActive)}>Projects</NavLink>
+          {/* 🔹 Gallery added here */}
+          <NavLink to="/gallery" className={({ isActive }) => linkClass(isActive)}>Gallery</NavLink>
         </nav>
 
         {/* center logo */}
@@ -35,8 +37,6 @@ export default function NavBar() {
         <nav className="hidden sm:flex gap-4 items-center">
           <NavLink to="/services" className={({ isActive }) => linkClass(isActive)}>Services</NavLink>
           <NavLink to="/contact" className={({ isActive }) => linkClass(isActive)}>Contact</NavLink>
-
-          
         </nav>
 
         {/* Mobile menu button */}
@@ -53,13 +53,11 @@ export default function NavBar() {
           <div className="flex flex-col px-4">
             <NavLink onClick={() => setOpen(false)} to="/" className="py-2 text-base text-white">Home</NavLink>
             <NavLink onClick={() => setOpen(false)} to="/projects" className="py-2 text-base text-white">Projects</NavLink>
+            {/* 🔹 Gallery link in mobile menu */}
+            <NavLink onClick={() => setOpen(false)} to="/gallery" className="py-2 text-base text-white">Gallery</NavLink>
             <NavLink onClick={() => setOpen(false)} to="/services" className="py-2 text-base text-white">Services</NavLink>
             <NavLink onClick={() => setOpen(false)} to="/contact" className="py-2 text-base text-white">Contact</NavLink>
-
-            
           </div>
-
-                   
         </div>
       )}
     </header>

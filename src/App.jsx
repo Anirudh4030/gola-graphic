@@ -8,7 +8,10 @@ import Projects from './pages/Projects'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 
-export default function App(){
+// 🔹 Import the new Gallery component
+import Gallery from './components/Gallery'
+
+export default function App() {
   return (
     <Router>
       <div className="min-h-screen flex flex-col bg-black text-white">
@@ -19,6 +22,10 @@ export default function App(){
             <Route path="/projects" element={<Projects />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
+
+            {/* 🔹 New route for Gallery */}
+            <Route path="/gallery" element={<Gallery />} />
+
             {/* fallback to home */}
             <Route path="*" element={<Home />} />
           </Routes>
