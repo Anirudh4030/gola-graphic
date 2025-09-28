@@ -2,60 +2,66 @@
 import React, { useState, useEffect } from 'react'
 import { client, urlFor } from '../sanityClient'
 
-const TABS = [
-  { id: 'posters', title: 'Film Posters' },
-  { id: 'titles', title: 'Title Designs' },
-  { id: 'logos', title: 'Logos' },
-  { id: 'youtube', title: 'YouTube' },
-  { id: 'social', title: 'Social Media' },
-  { id: 'pitch', title: 'Pitch Decks' },
-]
-
 export default function Projects() {
-  const [tab, setTab] = useState(TABS[0].id)
   const [projects, setProjects] = useState([])
+  const [categories, setCategories] = useState([])
+  const [activeTab, setActiveTab] = useState('')
 
   useEffect(() => {
     document.title = 'Gola Graphic — Projects'
   }, [])
 
-  // Fetch projects from Sanity
+  // Fetch all projects and auto-detect categories
   useEffect(() => {
     client
-      .fetch(`*[_type == "project" && category == $tab]{
+      .fetch(`*[_type == "project"]{
         title,
         description,
         image,
-        link
-      }`, { tab })
-      .then((data) => setProjects(data))
+        link,
+        category
+      }`)
+      .then((data) => {
+        setProjects(data)
+
+        // Extract unique categories
+        const uniqueCats = [...new Set(data.map(p => p.category))].filter(Boolean)
+        setCategories(uniqueCats)
+
+        // Set first category as active by default
+        if (uniqueCats.length > 0 && !activeTab) setActiveTab(uniqueCats[0])
+      })
       .catch(console.error)
-  }, [tab])
+  }, )
+
+  const filteredProjects = projects.filter(p => p.category === activeTab)
 
   return (
     <main className="pt-20 min-h-screen bg-black text-white">
       <div className="max-w-6xl mx-auto px-6 py-12">
         <h1 className="text-3xl font-bold">Projects</h1>
 
+        {/* Tabs */}
         <div className="mt-6 flex flex-wrap gap-2">
-          {TABS.map((t) => (
+          {categories.map((cat) => (
             <button
-              key={t.id}
-              onClick={() => setTab(t.id)}
+              key={cat}
+              onClick={() => setActiveTab(cat)}
               className={`px-4 py-2 rounded ${
-                tab === t.id
+                activeTab === cat
                   ? 'bg-brandRed text-white'
                   : 'bg-white/5 text-white/90 hover:bg-white/10'
               }`}
             >
-              {t.title}
+              {cat}
             </button>
           ))}
         </div>
 
+        {/* Projects Grid */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {projects.length > 0 ? (
-            projects.map((project) => (
+          {filteredProjects.length > 0 ? (
+            filteredProjects.map((project) => (
               <div key={project.title} className="bg-white/5 p-6 rounded shadow-lg">
                 {project.image && (
                   <img

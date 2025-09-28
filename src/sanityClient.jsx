@@ -1,15 +1,12 @@
-// src/sanityClient.js
-import { createClient } from '@sanity/client';
-import imageUrlBuilder from '@sanity/image-url';
+import { createClient } from '@sanity/client'
+import imageUrlBuilder from '@sanity/image-url'
 
-// Replace these with your Sanity project ID & dataset
 export const client = createClient({
-  projectId: '4gqbvdpz', // get from sanity manage
-  dataset: 'production',        // usually 'production'
-  apiVersion: '2025-09-22',     // today’s date
-  useCdn: true,                 // true = cached results
-});
+  projectId: "4gqbvdpz",   // ✅ replace with your Sanity project ID
+  dataset: "production",          // ✅ default is production
+  apiVersion: "2025-09-22",       // today’s date
+  useCdn: true,                   // true for cached read
+})
 
-// helper function to generate image URLs
-const builder = imageUrlBuilder(client);
-export const urlFor = (source) => builder.image(source);
+const builder = imageUrlBuilder(client)
+export const urlFor = (source) => builder.image(source)
