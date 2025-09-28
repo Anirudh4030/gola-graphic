@@ -8,6 +8,7 @@ import Projects from './pages/Projects'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 
+
 // 🔹 Import the new Gallery component
 import Gallery from './components/Gallery'
 

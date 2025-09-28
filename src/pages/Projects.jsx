@@ -77,7 +77,7 @@ export default function Projects() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-red-400 hover:underline mt-2 block"
+                    className="text-red-800 hover:underline mt-2 block"
                   >
                     View Project →
                   </a>

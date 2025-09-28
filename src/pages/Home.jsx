@@ -71,14 +71,22 @@ export default function Home(){
           </div>
 
           {/* Right Side */}
-          <div className="relative flex justify-center">
-            <div className="rounded-xl border-2 border-brandRed overflow-hidden shadow-lg hover:shadow-[0_0_25px_5px_rgba(255,0,0,0.6)] transition">
-              <video className="w-full max-w-xs sm:max-w-sm md:max-w-md rounded-xl" autoPlay loop muted playsInline>
-                <source src="/videos/hns.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
+<div className="relative flex justify-center">
+  <div className="rounded-xl border-2 border-brandRed overflow-hidden shadow-lg hover:shadow-[0_0_25px_5px_rgba(255,0,0,0.6)] transition w-full max-w-md aspect-[4/5]">
+    <video
+      className="w-full h-full object-contain rounded-xl"
+      autoPlay
+      loop
+      muted
+      playsInline
+    >
+      <source src="/videos/hns.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
         </div>
+        
       </section>
 
       {/* Tools We Use */}
