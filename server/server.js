@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const CLIENT_ORIGIN = process.env.ALLOWED_ORIGIN || 'http://localhost:5173';
+const CLIENT_ORIGIN = process.env.ALLOWED_ORIGIN || 'https://gola-graphic.netlify.app';
 
 app.use(express.json());
 app.use(cors({ origin: CLIENT_ORIGIN }));
