@@ -8,7 +8,8 @@ export default function Contact() {
 
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [sent, setSent] = useState(false)
-  const [error, setError] = useState(null)
+
+  const backendURL = 'https://golagraphic.onrender.com/send' // Render backend
 
   function update(e) {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -16,32 +17,31 @@ export default function Contact() {
 
   async function submit(e) {
     e.preventDefault()
-    setSent(false)
-    setError(null)
-
     try {
-      const res = await fetch('https://golagraphic.onrender.com/send', {
+      const res = await fetch(backendURL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify(form)
       })
 
       const data = await res.json()
+
       if (data.ok) {
         setSent(true)
         setForm({ name: '', email: '', message: '' })
       } else {
-        setError(data.error || '❌ Failed to send message. Try again later.')
+        alert('❌ Failed to send message. Try again later.')
       }
     } catch (err) {
-      setError('❌ Failed to send message. Try again later.')
       console.error(err)
+      alert('❌ Failed to send message. Try again later.')
     }
   }
 
   return (
     <main className="pt-20 min-h-screen bg-black text-white">
       <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
+        
         {/* Left - Form */}
         <div>
           <h1 className="text-4xl md:text-5xl font-extrabold">
@@ -49,18 +49,13 @@ export default function Contact() {
           </h1>
           <p className="text-white/70 mt-3 mb-8">
             🚀 We reply within <span className="text-brandRed font-semibold">24 hours</span>.  
-            Making creative noise, itself a marketing❤️
+            making creative noise, it'self a marketing❤️
           </p>
 
           <form onSubmit={submit} className="space-y-6">
             {sent && (
               <div className="bg-green-800 text-white p-3 rounded animate-bounce">
                 ✅ Message sent.
-              </div>
-            )}
-            {error && (
-              <div className="bg-red-800 text-white p-3 rounded animate-bounce">
-                {error}
               </div>
             )}
 
