@@ -18,8 +18,10 @@ export default function Gallery() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+    
       {images.map((item, i) => (
-        <div key={i} className="p-4 border rounded-lg shadow bg-white/5">
+        
+        <div key={i} className="p-4 border rounded-lg shadow bg-white/5"> <br />
           {item.image && (
             <img
               src={urlFor(item.image).width(500).url()}

@@ -85,7 +85,7 @@ export default function Projects() {
               </div>
             ))
           ) : (
-            <p className="text-white/60 col-span-full">No projects in this category yet.</p>
+            <p className="text-white/60 col-span-full">Content is loading, Please Wait...</p>
           )}
         </div>
       </div>
