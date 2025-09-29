@@ -7,7 +7,7 @@ import Home from './pages/Home'
 import Projects from './pages/Projects'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
-
+import Team from "./pages/Team"; // 👈 Import Team
 
 // 🔹 Import the new Gallery component
 import Gallery from './components/Gallery'
@@ -22,7 +22,9 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/services" element={<Services />} />
+             <Route path="/Team" element={<Team />} /> {/* new team page */}
             <Route path="/contact" element={<Contact />} />
+
 
             {/* 🔹 New route for Gallery */}
             <Route path="/gallery" element={<Gallery />} />

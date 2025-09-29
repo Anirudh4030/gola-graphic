@@ -152,7 +152,7 @@ export default function Home(){
       </section>
 
       {/* Team */}
-      <section className="py-12 sm:py-16 bg-black">
+      <section id="Team" className="py-12 sm:py-16 bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <h3 className="text-2xl font-bold text-white">Team Gola</h3>
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">

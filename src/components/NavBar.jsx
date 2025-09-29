@@ -20,8 +20,8 @@ export default function NavBar() {
         <nav className="hidden sm:flex gap-4 items-center">
           <NavLink to="/" className={({ isActive }) => linkClass(isActive)}>Home</NavLink>
           <NavLink to="/projects" className={({ isActive }) => linkClass(isActive)}>Projects</NavLink>
-          {/* 🔹 Gallery added here 
-          <NavLink to="/gallery" className={({ isActive }) => linkClass(isActive)}>Gallery</NavLink> */}
+          {/* 🔹 Gallery added here  */}
+          <NavLink to="/gallery" className={({ isActive }) => linkClass(isActive)}>Gallery</NavLink>
         </nav> 
 
         {/* center logo */}
@@ -36,7 +36,8 @@ export default function NavBar() {
         {/* right links */}
         <nav className="hidden sm:flex gap-4 items-center">
           <NavLink to="/services" className={({ isActive }) => linkClass(isActive)}>Services</NavLink>
-          <NavLink to="/contact" className={({ isActive }) => linkClass(isActive)}>Contact</NavLink>
+          <NavLink to="/Team" className={({ isActive }) => linkClass(isActive)}>Team</NavLink>
+           <NavLink to="/contact" className={({ isActive }) => linkClass(isActive)}>Contact</NavLink>
         </nav>
 
         {/* Mobile menu button */}
@@ -54,11 +55,12 @@ export default function NavBar() {
             <NavLink onClick={() => setOpen(false)} to="/" className="py-2 text-base text-white">Home</NavLink>
             <NavLink onClick={() => setOpen(false)} to="/projects" className="py-2 text-base text-white">Projects</NavLink>
             {/* 🔹 Gallery link in mobile menu */}
-               {/*
+               {/*   */}
      <NavLink onClick={() => setOpen(false)} to="/gallery" className="py-2 text-base text-white">Gallery</NavLink> 
      
-    */}
+ 
             <NavLink onClick={() => setOpen(false)} to="/services" className="py-2 text-base text-white">Services</NavLink>
+             <NavLink onClick={() => setOpen(false)} to="/Team" className="py-2 text-base text-white">Team</NavLink>
             <NavLink onClick={() => setOpen(false)} to="/contact" className="py-2 text-base text-white">Contact</NavLink>
           </div>
         </div>
