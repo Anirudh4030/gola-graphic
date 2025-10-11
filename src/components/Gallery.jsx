@@ -17,21 +17,32 @@ export default function Gallery() {
   }, [])
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
-    
-      {images.map((item, i) => (
-        
-        <div key={i} className="p-4 border rounded-lg shadow bg-white/5"> <br />
-          {item.image && (
-            <img
-              src={urlFor(item.image).width(500).url()}
-              alt={item.alt || item.title}
-              className="w-full h-64 object-cover rounded mb-2"
-            />
-          )}
-          <h3 className="mt-2 text-xl font-bold">{item.title}</h3>
-        </div>
-      ))}
+    <div className="pt-24 mt-8 flex flex-wrap gap-8 justify-start p-8"> {/* increased gap and padding */}
+      {images.length > 0 ? (
+        images.map((item) => (
+          <div
+            key={item.title}
+            className="rounded shadow-lg bg-white/5 p-4" // increased padding
+          >
+            {item.image && (
+              <img
+                src={urlFor(item.image).url()}
+                alt={item.alt || item.title}
+                className="block rounded"
+                style={{
+                  display: 'block',
+                  width: 'auto',
+                  maxWidth: '100%',
+                  height: 'auto',
+                }}
+              />
+            )}
+            <h3 className="font-semibold text-white mt-2 px-2">{item.title}</h3>
+          </div>
+        ))
+      ) : (
+        <p className="text-white/60">Content is loading, Please Wait...</p>
+      )}
     </div>
   )
 }

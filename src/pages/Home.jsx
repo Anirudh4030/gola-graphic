@@ -33,7 +33,7 @@ function Stat({ end, suffix, label }) {
 }
 
 export default function Home(){
-  useEffect(()=>{ document.title = 'Gola Graphic — Home' }, [])
+  useEffect(()=>{ document.title = 'Gola Graphic | Design Studio' }, [])
 
   return (
     <main className="pt-20">
@@ -98,28 +98,42 @@ export default function Home(){
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10 sm:mb-12">We Don’t Just Craft, We Tell Stories</h2>
 
           {/* Photoshop Toolbar */}
-          <div className="hidden lg:block absolute top-1/2 -left-20 transform -translate-y-1/2 z-20">
-            <img src="/tools/toolbar.png" alt="Photoshop Toolbar" className="w-16 lg:w-20 h-auto opacity-80 hover:opacity-100 transition" />
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+          <div className="flex flex-col items-center justify-center text-center w-full py-10">
+
             {/* Tools Grid */}
-            <div className="flex flex-col gap-6">
-              <div className="flex justify-center gap-6">
-                {["3.png", "1.png"].map((img, i) => (
-                  <img key={i} src={`/tools/${img}`} alt="Tool" className="w-20 sm:w-24 md:w-28 h-20 sm:h-24 md:h-28 object-contain opacity-80 hover:opacity-100 transform hover:scale-125 transition" />
-                ))}
-              </div>
-              <div className="flex justify-center gap-6">
-                {["2.png", "4.png"].map((img, i) => (
-                  <img key={i} src={`/tools/${img}`} alt="Tool" className="w-20 sm:w-24 md:w-28 h-20 sm:h-24 md:h-28 object-contain opacity-80 hover:opacity-100 transform hover:scale-125 transition" />
-                ))}
-              </div>
-            </div>
+{/* Tools Grid */}
+{/* Photoshop Toolbar */}
+<div className="flex items-center justify-center w-full">
+  <div className="flex flex-col items-center justify-center gap-6">
+    <div className="flex justify-center gap-6 flex-wrap">
+      {["3.png", "1.png"].map((img, i) => (
+        <img
+          key={i}
+          src={`/tools/${img}`}
+          alt="Tool"
+          className="w-20 sm:w-24 md:w-28 h-20 sm:h-24 md:h-28 object-contain opacity-80 hover:opacity-100 transform hover:scale-125 transition duration-300"
+        />
+      ))}
+    </div>
+    <div className="flex justify-center gap-6 flex-wrap">
+      {["2.png", "4.png"].map((img, i) => (
+        <img
+          key={i}
+          src={`/tools/${img}`}
+          alt="Tool"
+          className="w-20 sm:w-24 md:w-28 h-20 sm:h-24 md:h-28 object-contain opacity-80 hover:opacity-100 transform hover:scale-125 transition duration-300"
+        />
+      ))}
+    </div>
+  </div>
+</div>
+
+
+
             {/* Main Tool */}
-            <div className="flex justify-center">
-              <img src="/tools/5.png" alt="Main Tool" className="w-40 sm:w-52 md:w-64 h-auto object-contain opacity-90" />
-            </div>
+
           </div>
         </div>
       </section>
