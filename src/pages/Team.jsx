@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 
 const members = [
   { 
     name: 'Anirudh Rao', 
-    role: 'Founder/Designer', 
+    role: 'Founder / Designer', 
     photo: '/team/Anirudh.jpg', 
     description: 'Loves to craft visual identities that pop off the screen.',
     linkedin: 'https://www.linkedin.com/in/anirudh-rao-427021270/',
@@ -13,7 +13,7 @@ const members = [
   },
   { 
     name: 'Pavan Kumar', 
-    role: 'Co-Founder/Marketing Lead', 
+    role: 'Co-Founder / Marketing Lead', 
     photo: '/team/vpk.jpg', 
     description: 'Mastermind behind our marketing strategies and campaigns.',
     linkedin: 'https://www.linkedin.com/in/vadithiyapavan/',
@@ -21,7 +21,7 @@ const members = [
   },
   { 
     name: 'Angara Balaji', 
-    role: 'Marketing Strategist/Advisor', 
+    role: 'Marketing Strategist / Advisor', 
     photo: '/team/avk.jpeg', 
     description: 'Connects brands with people through killer strategies.',
     linkedin: 'https://www.linkedin.com/in/balaji-angara/',
@@ -37,88 +37,82 @@ const members = [
   },
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
+const cardAnim = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
 export default function Team() {
   return (
-    <div className="relative w-full bg-black text-white">
-      {/* Added padding-top to avoid heading going under navbar */}
-      <h1 className="text-5xl md:text-6xl font-bold text-center pt-28 pb-12 tracking-wider">
-        Meet Team Gola
-      </h1>
-
-      {/* Reduced vertical space between members */}
-      <div className="relative flex flex-col space-y-16">
-        {members.map((member, i) => (
-          <MemberSection key={i} member={member} index={i} />
-        ))}
+    <section className="bg-black min-h-screen py-20 px-6 text-center">
+      {/* Header */}
+      <div className="mb-12">
+        <h1 className="text-5xl font-extrabold text-white tracking-widest">
+          OUR TEAM
+        </h1>
+        <p className="text-white/60 text-lg mt-2">
+          MEET THE TEAM WHO MAKE ALL THIS HAPPEN
+        </p>
       </div>
-    </div>
-  );
-}
 
-function MemberSection({ member, index }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "-20% 0px -20% 0px" });
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start({ opacity: 1, y: 0 });
-    } else {
-      controls.start({ opacity: 0, y: 50 });
-    }
-  }, [isInView, controls]);
-
-  const bgColors = ["#ff0000", "#00ffff", "#ff00ff", "#ffff00"];
-  const bgColor = bgColors[index % bgColors.length];
-
-  return (
-    <section
-      ref={ref}
-      className="relative flex flex-col items-center justify-center min-h-screen px-6"
-    >
-      {/* Subtle Animated Background */}
+      {/* Team Grid */}
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full opacity-10 blur-3xl"
-        style={{ backgroundColor: bgColor }}
-        animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-      />
-
-      {/* Member Card */}
-      <motion.div
-        className="relative z-10 text-center max-w-sm md:max-w-md bg-white/5 p-6 rounded-2xl shadow-xl backdrop-blur-sm"
-        initial={{ opacity: 0, y: 50 }}
-        animate={controls}
-        transition={{ duration: 0.8 }}
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
+        variants={container}
+        initial="hidden"
+        animate="show"
       >
-        <img
-          src={member.photo}
-          alt={member.name}
-          className="h-64 w-64 md:h-72 md:w-72 mx-auto rounded-full object-cover border-4 border-white shadow-lg hover:scale-105 transition-transform duration-300"
-        />
-        <h2 className="mt-6 text-3xl md:text-4xl font-bold">{member.name}</h2>
-        <p className="text-xl text-white/80 mt-2">{member.role}</p>
-        <p className="mt-4 text-white/70">{member.description}</p>
+        {members.map((member, i) => (
+          <motion.div
+            key={i}
+            className="relative rounded-xl overflow-hidden cursor-pointer bg-neutral-900 group"
+            variants={cardAnim}
+          >
+            {/* Image */}
+            <img
+              src={member.photo}
+              alt={member.name}
+              className="w-full h-80 object-cover filter grayscale group-hover:grayscale-0 transform group-hover:scale-105 transition-all duration-700 ease-out"
+            />
 
-        {/* Social Links */}
-        <div className="mt-6 flex justify-center gap-4">
-          <a 
-            href={member.linkedin} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-red-500 rounded text-white font-medium hover:bg-red-900 transition"
-          >
-            LinkedIn
-          </a>
-          <a 
-            href={member.instagram} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-red-500 rounded text-white font-medium hover:bg-red-900 transition"
-          >
-            Instagram
-          </a>
-        </div>
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-500">
+              <div className="flex flex-col items-center space-y-3">
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-transparent text-white font-semibold text-sm border border-white px-4 py-1 rounded hover:bg-white hover:text-black transition-all"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href={member.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-transparent text-white font-semibold text-sm border border-white px-4 py-1 rounded hover:bg-white hover:text-black transition-all"
+                >
+                  Instagram
+                </a>
+              </div>
+            </div>
+
+            {/* Role Text with Blur Background */}
+            <div className="absolute bottom-3 left-3 right-3 flex justify-center">
+              <div className="backdrop-blur-md bg-black/60 opacity-80 text-white text-sm font-medium px-3 py-2 rounded-lg shadow-md w-fit">
+                {member.role}
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </motion.div>
     </section>
   );
