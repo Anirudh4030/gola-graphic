@@ -56,10 +56,10 @@ export default function Team() {
       {/* Header */}
       <div className="mb-12">
         <h1 className="text-5xl font-extrabold text-white tracking-widest">
-          OUR TEAM
+          Our Team
         </h1>
         <p className="text-white/60 text-lg mt-2">
-          MEET THE TEAM WHO MAKE ALL THIS HAPPEN
+          Meet The Team Who Make All These Happen :)   
         </p>
       </div>
 
