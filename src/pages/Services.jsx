@@ -8,7 +8,7 @@ const SERVICES = [
   {title:'YouTube', desc: 'Thumbnails, channel art, thumbnails & community posts'},
   {title:'Social Media', desc: 'Designs for promo and campaign posts'},
   {title:'Pitch Decks', desc: 'PPT & pitch materials for films & business'},
-  {title:'Portfolios', desc: 'Profiles & portfolios for filmmakers & businesses'},
+  {title:'Portfolios', desc: 'Profiles & portfolios for filmmakers & businesses websites'},
   {title:'Content Strategy', desc: 'Content & marketing strategy guidance'},
 ]
 
